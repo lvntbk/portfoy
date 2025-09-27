@@ -1,0 +1,287 @@
+:root {
+  --bg-color: #0a0a0a;
+  --text-color: #eee;
+  --accent-color: #fcf4f1;
+  --card-bg: #1c1c1c;
+
+  --frontend-color: #e34c26;
+  --backend-color: #4db5ff;
+  --database-color: #f0db4f;
+  --soft-color: #ff7f50; /* Soft skills rengi */
+}
+
+/* Genel */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: url('images/levent.jpg') center/cover no-repeat fixed;
+  color: var(--text-color);
+  scroll-behavior: smooth;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(10,10,10,0.6);
+  z-index: -1;
+}
+
+/* HERO */
+#hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  padding: 120px 20px 60px;
+  position: relative;
+}
+
+#hero h1 {
+  font-size: 3em;
+  font-weight: 700;
+  transition: transform 0.3s, color 0.3s;
+}
+
+#hero h1:hover {
+  transform: scale(1.05);
+  color: #fff;
+}
+
+#hero h2 {
+  color: #aaa;
+  font-weight: 400;
+}
+
+/* Filtre Butonları */
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.filter-buttons button {
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: none;
+  background: #222;
+  color: var(--accent-color);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-buttons button.active,
+.filter-buttons button:hover {
+  background: var(--accent-color);
+  color: #0a0a0a;
+  box-shadow: 0 5px 15px rgba(255,255,255,0.2);
+}
+
+/* Tech & Soft Skills Badges */
+.techs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.techs span {
+  background: #222;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.95em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.techs span i {
+  font-size: 1.2em;
+  transition: all 0.3s ease;
+}
+
+.techs span.frontend { background: var(--frontend-color); color: #0a0a0a; }
+.techs span.backend { background: var(--backend-color); color: #0a0a0a; }
+.techs span.database { background: var(--database-color); color: #0a0a0a; }
+.techs span.soft { background: var(--soft-color); color: #0a0a0a; }
+
+.techs span:hover {
+  transform: scale(1.2) rotate(-3deg);
+  background: var(--accent-color);
+  color: #0a0a0a;
+  box-shadow: 0 5px 15px rgba(255,255,255,0.2);
+}
+
+.techs span:hover i { transform: scale(1.2); color: #0a0a0a; }
+
+/* Hakkında */
+#about {
+  text-align: center;
+  max-width: 800px;
+  margin: 40px auto;
+}
+
+#about h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+#about p {
+  line-height: 1.6;
+}
+
+/* Projeler */
+.cards {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 15px;
+  width: 300px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 35px rgba(255,255,255,0.15);
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.card a:hover { color: #fff; }
+
+.all-projects {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 1.1em;
+}
+
+.all-projects a {
+  color: var(--accent-color);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.all-projects a:hover { color: #fff; }
+
+/* İletişim */
+#contact {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+}
+
+#contact h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+#contact p {
+  max-width: 700px;
+  margin: 0 auto 30px auto;
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.contact-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  background: #222;
+  color: var(--accent-color);
+  font-size: 1.8em;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.contact-icons a:hover {
+  transform: scale(1.2);
+  background: var(--accent-color);
+  color: #0a0a0a;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+  font-size: 0.9em;
+  color: #aaa;
+}
+
+/* Section genel ayarlar */
+section {
+  padding: 40px 20px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Letter by Letter Başlık */
+#hero h1 span {
+  opacity: 0;
+  display: inline-block;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+/* Back to Top Butonu */
+#topBtn { 
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  background: var(--accent-color);
+  color: #0a0a0a;
+  border: none;
+  border-radius: 5px;
+  display: none;
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+#topBtn:hover { transform: scale(1.1); }
